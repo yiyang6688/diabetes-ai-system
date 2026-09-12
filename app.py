@@ -1,14 +1,9 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
-import urllib.request
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-if not os.path.exists("WenQuanYiZenHei.ttf"):
-    url = "https://github.com/StellarCN/scp_zh/raw/master/fonts/WenQuanYiZenHei.ttf"
-    urllib.request.urlretrieve(url, "WenQuanYiZenHei.ttf")
-plt.rcParams['font.family'] = ['WenQuanYi Zen Hei']   
 plt.rcParams['font.sans-serif'] = ['WenQuanYi Zen Hei']
 plt.rcParams['axes.unicode_minus'] = False
 import seaborn as sns
@@ -35,8 +30,6 @@ import jieba
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 warnings.filterwarnings("ignore")
-plt.rcParams['font.sans-serif'] = ['SimHei']
-plt.rcParams['axes.unicode_minus'] = False
 
 # 页面基础布局设置
 st.set_page_config(
