@@ -4,9 +4,11 @@ import streamlit as st
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+plt.rcParams['font.family'] = 'sans-serif'
 plt.rcParams['font.sans-serif'] = ['WenQuanYi Zen Hei']
 plt.rcParams['axes.unicode_minus'] = False
 import seaborn as sns
+sns.set_theme(rc={'font.sans-serif': ['WenQuanYi Zen Hei']})
 import warnings
 import time
 from datetime import datetime
@@ -1349,10 +1351,6 @@ elif menu == "📊 全指标数据大屏":
         sns.histplot(df_plot['年龄'], bins=20, kde=True, color='#005792', ax=ax1)
         ax1.set_xlabel("年龄（岁）")
         ax1.set_ylabel("患者数（人）")
-        for label in ax1.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax1.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig1)
 
     with row1_col2:
@@ -1362,10 +1360,6 @@ elif menu == "📊 全指标数据大屏":
         ax2.set_xticklabels(['女性', '男性'])
         ax2.set_xlabel("性别")
         ax2.set_ylabel("患者数（人）")
-        for label in ax2.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax2.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig2)
 
     # 血压
@@ -1376,10 +1370,6 @@ elif menu == "📊 全指标数据大屏":
         sns.histplot(df_plot['收缩压'], bins=20, kde=True, color='#2E86AB', ax=ax3)
         ax3.set_xlabel("收缩压（mmHg）")
         ax3.set_ylabel("患者数（人）")
-        for label in ax3.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax3.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig3)
 
     with row2_col2:
@@ -1388,10 +1378,6 @@ elif menu == "📊 全指标数据大屏":
         sns.histplot(df_plot['舒张压'], bins=20, kde=True, color='#A23B72', ax=ax4)
         ax4.set_xlabel("舒张压（mmHg）")
         ax4.set_ylabel("患者数（人）")
-        for label in ax4.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax4.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig4)
 
     # 血糖三图
@@ -1402,10 +1388,6 @@ elif menu == "📊 全指标数据大屏":
         sns.histplot(df_plot['空腹血糖'], bins=20, kde=True, color='#E74C3C', ax=ax5)
         ax5.set_xlabel("空腹血糖（mg/dL）")
         ax5.set_ylabel("患者数（人）")
-        for label in ax5.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax5.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig5)
 
     with row3_col2:
@@ -1414,10 +1396,6 @@ elif menu == "📊 全指标数据大屏":
         sns.histplot(df_plot['餐后血糖'], bins=20, kde=True, color='#F39C12', ax=ax6)
         ax6.set_xlabel("餐后血糖（mg/dL）")
         ax6.set_ylabel("患者数（人）")
-        for label in ax6.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax6.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig6)
 
     with row3_col3:
@@ -1426,10 +1404,6 @@ elif menu == "📊 全指标数据大屏":
         sns.histplot(df_plot['糖化血红蛋白'], bins=20, kde=True, color='#8E44AD', ax=ax7)
         ax7.set_xlabel("糖化HbA1c（%）")
         ax7.set_ylabel("患者数（人）")
-        for label in ax7.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax7.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig7)
 
     # BMI + 病程 + 吸烟
@@ -1440,10 +1414,6 @@ elif menu == "📊 全指标数据大屏":
         sns.histplot(df_plot['BMI'], bins=20, kde=True, color='#1ABC9C', ax=ax8)
         ax8.set_xlabel("BMI")
         ax8.set_ylabel("患者数（人）")
-        for label in ax8.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax8.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig8)
 
     with row4_col2:
@@ -1452,10 +1422,6 @@ elif menu == "📊 全指标数据大屏":
         sns.histplot(df_plot['病程'], bins=20, kde=True, color='#16A085', ax=ax9)
         ax9.set_xlabel("病程（年）")
         ax9.set_ylabel("患者数（人）")
-        for label in ax9.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax9.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig9)
 
     with row4_col3:
@@ -1465,10 +1431,6 @@ elif menu == "📊 全指标数据大屏":
         ax10.set_xticklabels(['不吸烟', '轻度', '中度', '重度'])
         ax10.set_xlabel("吸烟等级")
         ax10.set_ylabel("患者数（人）")
-        for label in ax10.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax10.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig10)
 
     # 并发症统计
@@ -1479,10 +1441,6 @@ elif menu == "📊 全指标数据大屏":
         sns.countplot(x='并发症总数', data=df_plot, hue='并发症总数', palette='viridis', legend=False, ax=ax11)
         ax11.set_xlabel("并发症数量（个）")
         ax11.set_ylabel("患者数（人）")
-        for label in ax11.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax11.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig11)
 
     with row5_col2:
@@ -1493,10 +1451,6 @@ elif menu == "📊 全指标数据大屏":
         sns.barplot(x=compli_names, y=compli_sum, hue=compli_names, palette='Blues', legend=False, ax=ax12)
         ax12.set_ylabel("患病人数（人）")
         plt.xticks(rotation=15)
-        for label in ax12.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax12.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig12)
     # 高低风险对比2
     st.markdown("---")
@@ -1510,10 +1464,6 @@ elif menu == "📊 全指标数据大屏":
         ax13[row][col].set_title(f'{metric} 风险对比')
         ax13[row][col].set_xlabel('0=低风险 1=高风险')
     plt.tight_layout()
-    for label in ax13.get_xticklabels():
-        label.set_fontfamily('WenQuanYi Zen Hei')
-    for label in ax13.get_yticklabels():
-        label.set_fontfamily('WenQuanYi Zen Hei')
     st.pyplot(fig13)
 
     st.success("✅ 第三段全指标数据大屏上线成功！")
@@ -1606,10 +1556,6 @@ elif menu == "🤖 模型训练可视化":
                     xticklabels=['低风险', '高风险'], yticklabels=['低风险', '高风险'], ax=ax1)
         ax1.set_xlabel("预测标签")
         ax1.set_ylabel("真实标签")
-        for label in ax1.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax1.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig1)
     with col2:
         st.markdown("##### 逻辑回归混淆矩阵")
@@ -1619,10 +1565,6 @@ elif menu == "🤖 模型训练可视化":
                     xticklabels=['低风险', '高风险'], yticklabels=['低风险', '高风险'], ax=ax2)
         ax2.set_xlabel("预测标签")
         ax2.set_ylabel("真实标签")
-        for label in ax2.get_xticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
-        for label in ax2.get_yticklabels():
-            label.set_fontfamily('WenQuanYi Zen Hei')
         st.pyplot(fig2)
 
     importances = rf.feature_importances_
@@ -1645,10 +1587,6 @@ elif menu == "🤖 模型训练可视化":
     ax3.set_ylabel("临床特征")
     ax3.set_title("糖尿病并发症高风险关键影响因素")
     plt.tight_layout()
-    for label in ax3.get_xticklabels():
-        label.set_fontfamily('WenQuanYi Zen Hei')
-    for label in ax3.get_yticklabels():
-        label.set_fontfamily('WenQuanYi Zen Hei')    
     st.pyplot(fig3)
 
     st.markdown("##### ROC曲线对比")
@@ -1664,10 +1602,6 @@ elif menu == "🤖 模型训练可视化":
     ax4.legend(loc='lower right')
     plt.rcParams['font.sans-serif'] = ['SimHei']
     plt.tight_layout()
-    for label in ax4.get_xticklabels():
-        label.set_fontfamily('WenQuanYi Zen Hei')
-    for label in ax4.get_yticklabels():
-        label.set_fontfamily('WenQuanYi Zen Hei')
     st.pyplot(fig4)
 
     st.success("✅ 第四段模型训练模块上线完成")
