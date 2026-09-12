@@ -1,9 +1,14 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
+import urllib.request
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+if not os.path.exists("WenQuanYiZenHei.ttf"):
+    url = "https://github.com/StellarCN/scp_zh/raw/master/fonts/WenQuanYiZenHei.ttf"
+    urllib.request.urlretrieve(url, "WenQuanYiZenHei.ttf")
+plt.rcParams['font.family'] = ['WenQuanYi Zen Hei']   
 plt.rcParams['font.sans-serif'] = ['WenQuanYi Zen Hei']
 plt.rcParams['axes.unicode_minus'] = False
 import seaborn as sns
